@@ -3,7 +3,7 @@ pipeline{
         label "jenkins"
     }
     parameters{
-        sring(name: 'USER_NAME', defaultValue: 'jenkins', description: 'Enter user name')
+        string(name: 'USER_NAME', defaultValue: 'jenkins', description: 'Enter user name')
         booleanParam(name: 'DEMO', defaultValue: 'true', description: 'built type')
     }
     stages{
