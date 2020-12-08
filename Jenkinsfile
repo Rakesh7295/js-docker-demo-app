@@ -4,7 +4,7 @@ pipeline{
     }
     parameters{
         string(name: 'USER_NAME', defaultValue: 'jenkins', description: 'Enter user name')
-        booleanParam(name: 'DEMO', defaultValue: 'true', description: 'built type')
+        booleanParam(name: 'DEMO', defaultValue: true, description: 'built type')
     }
     stages{
         stage("Build"){
