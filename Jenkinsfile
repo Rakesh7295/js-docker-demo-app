@@ -15,11 +15,6 @@ pipeline{
         }
         stage("Test"){
             steps{
-                when{
-                    expression{
-                        params.DEMO == true
-                    }
-                }
                 echo "====++++executing Test++++===="
             }
         }
