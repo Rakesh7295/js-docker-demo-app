@@ -2,14 +2,24 @@ pipeline{
     agent{
         label "jenkins"
     }
+    parameters{
+        sring(name: 'USER_NAME', defaultValue: 'jenkins', description: 'Enter user name')
+        booleanParam(name: 'DEMO', defaultValue: 'true', description: 'built type')
+    }
     stages{
         stage("Build"){
             steps{
                 echo "========executing Build========"
+                echo "executer name is ${params.USER_NAME}"
             }
         }
         stage("Test"){
             steps{
+                when{
+                    expression{
+                        params.DEMO == true
+                    }
+                }
                 echo "====++++executing Test++++===="
             }
         }
